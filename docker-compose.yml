@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  registry-mirror:
+    image: registry:2
+    ports:
+    - 5001:5001
+    volumes:
+      - /home/user/docker_registry/config_mirror.yml:/etc/docker/registry/config.yml:ro
+  registry-mirror-gcr:
+    image: registry:2
+    environment:
+    - REGISTRY_PROXY_REMOTEURL=https://gcr.io
+    ports:
+    - 5002:5000
+  registry-mirror-quay:
+    image: registry:2.5
+    environment:
+    - REGISTRY_PROXY_REMOTEURL=https://quay.io
+    ports:
+    - 5003:5000
+  registry-mirror-k8s:
+    image: registry:2
+    environment:
+    - REGISTRY_PROXY_REMOTEURL=https://k8s.gcr.io
+    ports:
+    - 5004:5000

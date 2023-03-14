@@ -1,0 +1,28 @@
+mirrors:
+  docker.io:
+    endpoint:
+      - "http://localhost:5001"
+  localhost:5001:
+    endpoint:
+      - "http://localhost:5001"
+      
+  gcr.io:
+    endpoint:
+      - "http://localhost:5002"
+  localhost:5002:
+    endpoint:
+      - "http://localhost:5002"
+      
+  quay.io:
+    endpoint:
+      - "http://localhost:5003"
+  localhost:5003:
+    endpoint:
+      - "http://localhost:5003"
+      
+  k8s.gcr.io:
+    endpoint:
+      - "http://localhost:5004"
+  localhost:5004:
+    endpoint:
+      - "http://localhost:5004"
